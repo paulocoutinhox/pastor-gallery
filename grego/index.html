@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>grego</title>
+    <meta name="description" content="">
+    <meta name="author" content="Pastor Paulo Coutinho">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/photo-sphere-viewer/photo-sphere-viewer.min.css">
+    <link rel="stylesheet" href="../static/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="../static/photoswipe/photoswipe-dynamic-caption-plugin.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <main class="flex-shrink-0">
+        <div class="container-fluid">
+            <header class="mt-3">
+                <div class="jumbotron">
+                    <h1><i class="fa fa-camera-retro" aria-hidden="true"></i> Galeria Bíblica e Teológica</h1>
+                    <p><a href="../">Galerias de imagens com conteúdos bíblicos e teológicos</a></p>
+                </div>
+
+
+                <nav id="breadcrumb" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="../">Home</a>
+                        </li><li class="breadcrumb-item">
+                            <a href=".">grego</a>
+                        </li>
+</ol>
+                </nav>
+            </header>
+<div id="main" role="main">
+
+    <div id="gallery" class="pswp-gallery">
+        <div class="row flex">
+            <div class="col-lg-3 col-md-4 col-sm-6 gallery-item">
+                <div class="img-thumbnail">
+                    <a href="05b49688-fef9-4638-bf0d-88c15119bfca.png"                        data-pswp-src="05b49688-fef9-4638-bf0d-88c15119bfca.png" data-pswp-width="2339"
+                        data-pswp-height="1656"  data-is-pano="false" data-cropped="true"  target="_blank">
+
+                        <img src="thumbnails/05b49688-fef9-4638-bf0d-88c15119bfca.png" alt=""
+                            data-title="05b49688-fef9-4638-bf0d-88c15119bfca" class="img-fluid"
+                            style="width: 186.66666666666666px; height: 140.0px; object-fit:contain;" />
+
+                        <span class="pswp-caption-content">                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 gallery-item">
+                <div class="img-thumbnail">
+                    <a href="5eea6cdc-668f-403d-b019-560bcc76041b.png"                        data-pswp-src="5eea6cdc-668f-403d-b019-560bcc76041b.png" data-pswp-width="2339"
+                        data-pswp-height="1656"  data-is-pano="false" data-cropped="true"  target="_blank">
+
+                        <img src="thumbnails/5eea6cdc-668f-403d-b019-560bcc76041b.png" alt=""
+                            data-title="5eea6cdc-668f-403d-b019-560bcc76041b" class="img-fluid"
+                            style="width: 186.66666666666666px; height: 140.0px; object-fit:contain;" />
+
+                        <span class="pswp-caption-content">                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="../static/photo-sphere-viewer/three.min.js"></script>
+<script src="../static/photo-sphere-viewer/browser.js"></script>
+<script src="../static/photo-sphere-viewer/photo-sphere-viewer.min.js"></script>
+
+<script type="module">
+    import PhotoSwipe from './../static/photoswipe/photoswipe.esm.min.js';
+    import PhotoSwipeLightbox from './../static/photoswipe/photoswipe-lightbox.esm.min.js';
+    import PhotoSwipeDynamicCaption from './../static/photoswipe/photoswipe-dynamic-caption-plugin.esm.min.js';
+    import PhotoSwipeFullscreen from './../static/photoswipe/photoswipe-fullscreen.esm.min.js';
+
+    const lightbox = new PhotoSwipeLightbox({
+        // may select multiple "galleries"
+        gallery: '#gallery',
+        // Elements within gallery (slides)
+        children: 'a',
+        // setup PhotoSwipe Core dynamic import
+        pswpModule: () => PhotoSwipe,
+        // Animation
+        showAnimationDuration: 500,
+        hideAnimationDuration: 500,
+    });
+    const fullscreenPlugin = new PhotoSwipeFullscreen(lightbox);
+
+    /* Nice animation */
+    const backEasing = {
+        in: 'cubic-bezier(0.6, -0.28, 0.7, 1)',
+        out: 'cubic-bezier(0.3, 0, 0.32, 1.275)',
+        inOut: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+    };
+    lightbox.on('firstUpdate', () => {
+        lightbox.pswp.options.easing = backEasing.out;
+    });
+    lightbox.on('initialZoomInEnd', () => {
+        lightbox.pswp.options.easing = backEasing.inOut;
+    });
+    lightbox.on('close', () => {
+        lightbox.pswp.options.easing = backEasing.in;
+    });
+
+    /* Caption */
+    const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+        type: 'auto',
+    });
+
+    /* Download button */
+    lightbox.on('uiRegister', function () {
+        lightbox.pswp.ui.registerElement({
+            name: 'download-button',
+            order: 8,
+            isButton: true,
+            tagName: 'a',
+
+            // SVG with outline
+            html: {
+                isCustomSVG: true,
+                inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+                outlineID: 'pswp__icn-download'
+            },
+
+            onInit: (el, pswp) => {
+                el.setAttribute('target', '_blank');
+                el.setAttribute('rel', 'noopener');
+
+                pswp.on('change', () => {
+                    el.href = pswp.currSlide.data.element.href;
+                });
+            }
+        });
+    });
+
+    /* Pano */
+    // parse data-is-pano attribute
+    lightbox.addFilter('itemData', (itemData, index) => {
+        itemData.isPano = itemData.element.dataset.isPano == "true";
+        return itemData;
+    });
+
+    lightbox.on('contentAppend', (e) => {
+        const { content } = e;
+        if (content.data.isPano) {
+            e.preventDefault();
+            const div = document.createElement('div');
+
+            /* overlay */
+            content.overlay = document.createElement('div');
+            content.overlay.className = "pano-overlay"
+            content.overlay.style.width = content.element.style.width;
+            content.overlay.style.height = content.element.style.height;
+
+            const overlaytext = document.createElement('div');
+            overlaytext.className = "pano-overlay-text";
+            overlaytext.textContent = "Cliquer ici pour activer le panorama";
+            content.overlay.appendChild(overlaytext);
+
+            /* dom */
+            div.appendChild(content.overlay);
+            div.appendChild(content.element);
+
+            /* events */
+            div.onmouseover = () => { content.overlay.style.display = "block"; };
+            div.onmouseleave = () => { content.overlay.style.display = "none"; };
+            content.overlay.onclick = () => {
+                const viewer = document.createElement('div');
+                viewer.className = "photosphere-viewer"
+                div.appendChild(viewer);
+                content.psviewer = new PhotoSphereViewer.Viewer({ container: viewer, panorama: content.data.element.href, size: { width: content.element.style.width, height: content.element.style.height } });
+                content.overlay.style.display = "none";
+                div.onmouseover = null;
+            };
+            content.slide.container.appendChild(div);
+        }
+    });
+    lightbox.on('contentActivate', ({ content }) => {
+        if (content.overlay) {
+            content.overlay.style.width = content.element.style.width;
+            content.overlay.style.height = content.element.style.height;
+        }
+    });
+
+    lightbox.on('pointerDown', (e) => {
+        if (lightbox.pswp.currSlide.content.psviewer) {
+            e.preventDefault();
+        }
+    });
+
+    /* Start */
+    lightbox.init();
+</script>        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <p>&copy; Pastor Paulo Coutinho</p>
+        </div>
+    </footer>
+</body>
+
+</html>
